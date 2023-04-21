@@ -1,5 +1,3 @@
-package preguntas;
-
 public abstract class Encuesta {
 	protected Pregunta pregunta;
 

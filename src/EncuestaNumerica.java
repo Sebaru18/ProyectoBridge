@@ -1,4 +1,3 @@
-package preguntas;
 
 public class EncuestaNumerica extends Encuesta {
 
