@@ -1,26 +1,31 @@
-import java.util.ArrayList;
-
-public abstract class Respuesta {
-    ArrayList<String> respuestas;
-    int id;
-
-    public abstract boolean agregarRespuesta(String rsta);
-    public abstract int identificarTipo(String rsta);
-
-    public ArrayList<String> getRespuestas() {
-        return respuestas;
-    }
-    
-    public void addRespuesta(String rsta){
-        respuestas.add(rsta);
-    }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
+public class Respuesta {
+    private Pregunta pregunta= new Pregunta() {
+	};
+	
+	private String respuesta;
+	public int getTipo() {
+		return pregunta.getTipo();
+	}
+	public String getPregunta() {
+		return pregunta.getPregunta();
+	}
+	public void Preguntar() {
+		pregunta.definirPregunta();
+	}
+	public void Preguntar(int tipo) {
+		pregunta.definirPregunta(tipo);
+	}
+	
+	/**
+	 * @return the respuesta
+	 */
+	public String getRespuesta() {
+		return respuesta;
+	}
+	/*
+	 * toca determinar el tipo de la respuesta 
+	 */
+    //public abstract void agregarRespuesta();
 
     
 }
