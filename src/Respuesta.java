@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Respuesta {
     private Pregunta pregunta= new Pregunta() {
 	};
@@ -11,9 +13,14 @@ public class Respuesta {
 	}
 	public void Preguntar() {
 		pregunta.definirPregunta();
+		Scanner input = new Scanner(System.in);
+		respuesta = input.nextLine();
+		
 	}
 	public void Preguntar(int tipo) {
 		pregunta.definirPregunta(tipo);
+		Scanner input = new Scanner(System.in);
+		respuesta = input.nextLine();
 	}
 	
 	/**

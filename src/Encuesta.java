@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Encuesta {
+public class Encuesta {
 	private ArrayList<Respuesta> Respuestas;
 	private Respuesta rsta;
 	public Encuesta() {
@@ -8,16 +8,21 @@ public abstract class Encuesta {
 		//this.rsta = new Respuesta();
 	}
 	
-	public void NuevaEncuesta() {
+	private void NuevaEncuesta() {
 		rsta= new Respuesta();
 	}
 	
 	public void Preguntar() {
+		NuevaEncuesta();
 		rsta.Preguntar();
+		Respuestas.add(rsta);
+		
 	}
 	
 	public void Preguntar(int tipo) {
+		NuevaEncuesta();
 		rsta.Preguntar(tipo);
+		Respuestas.add(rsta);
 	}
 	
 	public String getPregunta() {
@@ -40,6 +45,14 @@ public abstract class Encuesta {
 	}
 	
 	
-	
+	public ArrayList<Respuesta> getRespuestasTipo(int Tipo){
+		ArrayList<Respuesta> rstas = new ArrayList<Respuesta>();
+		for (int i = 0; i < Respuestas.size(); i++) {
+			if (Respuestas.get(i).getTipo() == Tipo) {
+				rstas.add(Respuestas.get(i));
+			}
+		}
+		return rstas;
+	}
 }
 
