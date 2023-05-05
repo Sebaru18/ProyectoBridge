@@ -1,3 +1,4 @@
+package Informe1;
 import java.util.Scanner;
 
 public class Respuesta {
